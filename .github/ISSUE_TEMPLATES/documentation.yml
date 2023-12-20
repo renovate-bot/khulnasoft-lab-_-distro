@@ -11,9 +11,9 @@ body:
       value: |
         Please make sure to go through these steps **before opening an issue**:
         
-        - [ ] Read the [documentation](https://docs.ansible-distro.com/)
-          - [ ] Read the [troubleshooting guide](https://docs.ansible-distro.com/administration-guide/troubleshooting)
-          - [ ] Read the [documentation regarding manual installations](https://docs.ansible-distro.com/administration-guide/installation_manually) if you did install Distro that way
+        - [ ] Read the [documentation](https://docs.ansible-semaphore.com/)
+          - [ ] Read the [troubleshooting guide](https://docs.ansible-semaphore.com/administration-guide/troubleshooting)
+          - [ ] Read the [documentation regarding manual installations](https://docs.ansible-semaphore.com/administration-guide/installation_manually) if you did install Distro that way
 
         - [ ] Check if there are existing [issues](https://github.com/khulnasoft-lab/distro/issues) or [discussions](https://github.com/khulnasoft-lab/distro/discussions) regarding your topic
 
