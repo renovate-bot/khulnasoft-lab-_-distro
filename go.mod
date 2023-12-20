@@ -22,7 +22,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/snikch/goodman v0.0.0-20171125024755-10e37e294daa
 	github.com/spf13/cobra v1.2.1
-	go.etcd.io/bbolt v1.3.2
+	go.etcd.io/bbolt v1.3.8
 	golang.org/x/crypto v0.17.0
 	golang.org/x/oauth2 v0.7.0
 )
