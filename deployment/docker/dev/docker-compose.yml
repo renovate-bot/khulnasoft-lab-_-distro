@@ -1,0 +1,39 @@
+version: '2'
+
+services:
+  mysql:
+    image: mariadb:10
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: distro
+      MYSQL_USER: distro
+      MYSQL_PASSWORD: distro
+    ## uncomment if you want to store mysql data between launches
+    #volumes:
+    #  - /tmp/mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  distro_dev:
+    image: distroui/distro:dev-compose
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/dev/Dockerfile
+    volumes:
+      - "./../../../:/go/src/github.com/khulnasoft-lab/distro:rw"
+    environment:
+      DISTRO_DB_DIALECT: mysql
+      DISTRO_DB_USER: distro
+      DISTRO_DB_PASS: distro
+      DISTRO_DB_HOST: mysql
+      DISTRO_DB_PORT: 3306
+      DISTRO_DB: distro
+      DISTRO_ADMIN_PASSWORD: password
+      DISTRO_ADMIN_NAME: "Developer"
+      DISTRO_ADMIN_EMAIL: admin@localhost
+      DISTRO_ADMIN: admin
+      DISTRO_WEB_ROOT: http://0.0.0.0:3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql

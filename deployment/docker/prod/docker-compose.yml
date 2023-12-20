@@ -1,0 +1,41 @@
+# This dockerfile provides an example of using the production image in a working stack
+version: '2'
+
+services:
+
+  mysql:
+    image: mysql:5.6
+    hostname: mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: distro
+      MYSQL_USER: distro
+      MYSQL_PASSWORD: hx4hjxqthfwbfsy5535u4agfdscm
+
+  distro:
+    image: distroui/distro:prod-compose
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/prod/Dockerfile
+    environment:
+      DISTRO_DB_DIALECT: mysql
+      DISTRO_DB_USER: distro
+      DISTRO_DB_PASS: hx4hjxqthfwbfsy5535u4agfdscm
+      DISTRO_DB_HOST: mysql
+      DISTRO_DB_PORT: 3306
+      DISTRO_DB: distro
+      DISTRO_ADMIN_PASSWORD: cangetin
+      DISTRO_ADMIN_NAME: admin
+      DISTRO_ADMIN_EMAIL: admin@localhost
+      DISTRO_ADMIN: admin
+    depends_on:
+      - mysql
+  distro_proxy:
+    image: ansibledistro/proxy:latest
+    build:
+      context: ./proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - distro

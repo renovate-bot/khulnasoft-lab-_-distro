@@ -1,0 +1,15 @@
+[Unit]
+Description=Ansible Distro
+Requires=network.target
+
+[Service]
+EnvironmentFile=/etc/distro/env
+ExecStart=/usr/bin/distro server --config ${DISTRO_CONFIG}
+ExecReload=/bin/kill -HUP $MAINPID
+User=distro
+Group=distro
+Restart=always
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target

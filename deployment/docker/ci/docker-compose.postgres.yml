@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: distro
+      POSTGRES_PASSWORD: distro
+      POSTGRES_DB: distro
+    ports:
+      - "5432:5432"
+
+  distro_ci:
+    image: distroui/distro:ci-compose
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/ci/Dockerfile
+    environment:
+      DISTRO_DB_DIALECT: postgres
+      DISTRO_DB_USER: distro
+      DISTRO_DB_PASS: distro
+      DISTRO_DB_HOST: postgres
+      DISTRO_DB_PORT: 5432
+      DISTRO_DB: distro
+      DISTRO_ADMIN_PASSWORD: password
+      DISTRO_ADMIN_NAME: "Developer"
+      DISTRO_ADMIN_EMAIL: admin@localhost
+      DISTRO_ADMIN: admin
+      DISTRO_WEB_ROOT: http://0.0.0.0:3000
+      DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  dredd:
+    image: ansibledistro/dredd:ci
+    command: ["--config", ".dredd/dredd.yml"]
+    environment:
+      DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
+      DISTRO_DB_DIALECT: postgres
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/ci/dredd.Dockerfile
+    depends_on:
+      - distro_ci
+      - postgres
+

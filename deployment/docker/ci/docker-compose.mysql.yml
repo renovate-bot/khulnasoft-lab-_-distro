@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: distro
+      MYSQL_USER: distro
+      MYSQL_PASSWORD: distro
+    ports:
+      - "3306:3306"
+
+  distro_ci:
+    image: distroui/distro:ci-compose
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/ci/Dockerfile
+    environment:
+      DISTRO_DB_DIALECT: mysql
+      DISTRO_DB_USER: distro
+      DISTRO_DB_PASS: distro
+      DISTRO_DB_HOST: mysql
+      DISTRO_DB_PORT: 3306
+      DISTRO_DB: distro
+      DISTRO_ADMIN_PASSWORD: password
+      DISTRO_ADMIN_NAME: "Developer"
+      DISTRO_ADMIN_EMAIL: admin@localhost
+      DISTRO_ADMIN: admin
+      DISTRO_WEB_ROOT: http://0.0.0.0:3000
+      DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+
+  dredd:
+    image: ansibledistro/dredd:ci
+    command: ["--config", ".dredd/dredd.yml"]
+    environment:
+      DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
+      DISTRO_DB_DIALECT: mysql
+    build:
+      context: ./../../../
+      dockerfile: ./deployment/docker/ci/dredd.Dockerfile
+    depends_on:
+      - distro_ci
+      - mysql
+

@@ -1,19 +1,19 @@
-# Semaphore Tasks
-# These tasks should be used to build and develop Semaphore
+# Distro Tasks
+# These tasks should be used to build and develop Distro
 #
 # Tasks without a `desc:` field are intended mainly to be called
 # internally by other tasks and therefore are not listed when running `task` or `task -l`
 version: '2'
 
 vars:
-  docker_namespace: semaphoreui
-  docker_image: semaphore
+  docker_namespace: distroui
+  docker_image: distro
 
 
 
 tasks:
   all:
-    desc: Install, Compile, Test and Build Semaphore for local architecture
+    desc: Install, Compile, Test and Build Distro for local architecture
     cmds:
       - task: deps
       - task: compile
@@ -101,7 +101,7 @@ tasks:
       - api/api-packr.go
     cmds:
       - mkdir -p web/dist
-      - go run util/version_gen/generator.go {{ if .TAG }}{{ .TAG }}{{ else }}{{ if .SEMAPHORE_VERSION }}{{ .SEMAPHORE_VERSION }}{{ else }}{{ .BRANCH }}-{{ .SHA }}-{{ .TIMESTAMP }}{{ if .DIRTY }}-dirty{{ end }}{{ end }}{{end}}
+      - go run util/version_gen/generator.go {{ if .TAG }}{{ .TAG }}{{ else }}{{ if .DISTRO_VERSION }}{{ .DISTRO_VERSION }}{{ else }}{{ .BRANCH }}-{{ .SHA }}-{{ .TIMESTAMP }}{{ if .DIRTY }}-dirty{{ end }}{{ end }}{{end}}
       - packr
     vars:
       TAG:
@@ -130,7 +130,7 @@ tasks:
     desc: Build a binary for the current architecture
     dir: cli
     cmds:
-      - env CGO_ENABLED=0 GOOS={{ .GOOS }} GOARCH={{ .GOARCH }} go build -o ../bin/semaphore{{ if eq OS "windows" }}.exe{{ end }}
+      - env CGO_ENABLED=0 GOOS={{ .GOOS }} GOARCH={{ .GOARCH }} go build -o ../bin/distro{{ if eq OS "windows" }}.exe{{ end }}
 
   release:
     desc: creates a release without performing validations or publishing artifacts
@@ -177,7 +177,7 @@ tasks:
       - task: docker
         vars:
           context: dev
-          args: build semaphore_dev
+          args: build distro_dev
           compose: true
       - task: dc:up
         vars:
@@ -190,7 +190,7 @@ tasks:
       - task: docker
         vars:
           context: prod
-          args: build semaphore
+          args: build distro
           compose: true
       - task: dc:up
         vars:
@@ -234,7 +234,7 @@ tasks:
           context: "{{ .context }}"
 
   docker:build:
-    desc: Build an image for Semaphore, requires context
+    desc: Build an image for Distro, requires context
     vars:
       tag: "{{ if .tag }}{{ .tag }}{{ else }}latest{{ end }}"
     cmds:

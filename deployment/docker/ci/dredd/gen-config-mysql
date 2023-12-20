@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+cat <<EOF
+{
+	"mysql": {
+		"host": "mysql:3306",
+		"user": "distro",
+		"pass": "distro",
+		"name": "distro"
+	},
+	"dialect": "mysql",
+	"access_key_encryption": "${DISTRO_ACCESS_KEY_ENCRYPTION}"
+}
+EOF
+

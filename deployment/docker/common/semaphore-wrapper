@@ -1,0 +1,164 @@
+#!/bin/sh
+
+set -e
+
+echoerr() { printf "%s\n" "$*" >&2; }
+
+file_env() {
+        local var=""
+        local fileVar=""
+        eval var="\$${1}"
+        eval fileVar="\$${1}_FILE"
+        local def="${2:-}"
+        if [ -n "${var:-}" ] && [ -n "${fileVar:-}" ]; then
+                echo >&2 "error: both ${1} and ${1}_FILE are set (but are exclusive)"
+                exit 1
+        fi
+        local val="$def"
+        if [ -n "${var:-}" ]; then
+                val="${var}"
+        elif [ -n "${fileVar:-}" ]; then
+                val="$(cat "${fileVar}")"
+        fi
+        export "${1}"="$val"
+        unset "${1}_FILE"
+}
+
+DISTRO_CONFIG_PATH="${DISTRO_CONFIG_PATH:-/etc/distro}"
+DISTRO_TMP_PATH="${DISTRO_TMP_PATH:-/tmp/distro}"
+
+# Distro database env config
+DISTRO_DB_DIALECT="${DISTRO_DB_DIALECT:-mysql}"
+DISTRO_DB_HOST="${DISTRO_DB_HOST:-0.0.0.0}"
+DISTRO_DB_PATH="${DISTRO_DB_PATH:-/var/lib/distro}"
+DISTRO_DB_PORT="${DISTRO_DB_PORT:-}"
+DISTRO_DB="${DISTRO_DB:-distro}"
+file_env 'DISTRO_DB_USER' 'distro'
+file_env 'DISTRO_DB_PASS' 'distro'
+# Email alert env config
+DISTRO_WEB_ROOT="${DISTRO_WEB_ROOT:-}"
+# Distro Admin env config
+file_env 'DISTRO_ADMIN' 'admin'
+DISTRO_ADMIN_EMAIL="${DISTRO_ADMIN_EMAIL:-admin@localhost}"
+DISTRO_ADMIN_NAME="${DISTRO_ADMIN_NAME:-Distro Admin}"
+file_env 'DISTRO_ADMIN_PASSWORD' 'distropassword'
+#Distro LDAP env config
+DISTRO_LDAP_ACTIVATED="${DISTRO_LDAP_ACTIVATED:-no}"
+DISTRO_LDAP_HOST="${DISTRO_LDAP_HOST:-}"
+DISTRO_LDAP_PORT="${DISTRO_LDAP_PORT:-}"
+DISTRO_LDAP_NEEDTLS="${DISTRO_LDAP_NEEDTLS:-no}"
+DISTRO_LDAP_DN_BIND="${DISTRO_LDAP_DN_BIND:-}"
+file_env 'DISTRO_LDAP_PASSWORD'
+DISTRO_LDAP_DN_SEARCH="${DISTRO_LDAP_DN_SEARCH:-}"
+DISTRO_LDAP_SEARCH_FILTER="${DISTRO_LDAP_SEARCH_FILTER:-(uid=%s)}"
+DISTRO_LDAP_MAPPING_DN="${DISTRO_LDAP_MAPPING_DN:-dn}"
+DISTRO_LDAP_MAPPING_USERNAME="${DISTRO_LDAP_MAPPING_USERNAME:-uid}"
+DISTRO_LDAP_MAPPING_FULLNAME="${DISTRO_LDAP_MAPPING_FULLNAME:-cn}"
+DISTRO_LDAP_MAPPING_EMAIL="${DISTRO_LDAP_MAPPING_EMAIL:-mail}"
+
+file_env 'DISTRO_ACCESS_KEY_ENCRYPTION'
+
+[ -d "${DISTRO_TMP_PATH}" ] || mkdir -p "${DISTRO_TMP_PATH}" || {
+    echo "Can't create Distro tmp path ${DISTRO_TMP_PATH}."
+    exit 1
+}
+
+[ -d "${DISTRO_CONFIG_PATH}" ] || mkdir -p "${DISTRO_CONFIG_PATH}" || {
+    echo "Can't create Distro Config path ${DISTRO_CONFIG_PATH}."
+    exit 1
+}
+
+[ -d "${DISTRO_DB_PATH}" ] || mkdir -p "${DISTRO_DB_PATH}" || {
+    echo "Can't create data path ${DISTRO_DB_PATH}."
+    exit 1
+}
+
+# wait on db to be up
+
+if [ "${DISTRO_DB_DIALECT}" != 'bolt' ]; then
+  echoerr "Attempting to connect to database ${DISTRO_DB} on ${DISTRO_DB_HOST}:${DISTRO_DB_PORT} with user ${DISTRO_DB_USER} ..."
+  TIMEOUT=30
+  while ! $(nc -z "$DISTRO_DB_HOST" "$DISTRO_DB_PORT") >/dev/null 2>&1; do
+      TIMEOUT=$(expr $TIMEOUT - 1)
+      if [ $TIMEOUT -eq 0 ]; then
+          echoerr "Could not connect to database server. Exiting."
+          exit 1
+      fi
+      echo -n "."
+      sleep 1
+  done
+fi
+
+if [ -n "${DISTRO_DB_PORT}" ]; then
+  DISTRO_DB_HOST="${DISTRO_DB_HOST}:${DISTRO_DB_PORT}"
+fi
+
+case ${DISTRO_DB_DIALECT} in
+    mysql) DISTRO_DB_DIALECT_ID=1;;
+    bolt) DISTRO_DB_DIALECT_ID=2;;
+    postgres) DISTRO_DB_DIALECT_ID=3;;
+    *)
+        echoerr "Unknown database dialect: ${DISTRO_DB_DIALECT}"
+        exit 1
+        ;;
+esac
+
+# Create a config if it does not exist in the current config path
+if [ ! -f "${DISTRO_CONFIG_PATH}/config.json" ]; then
+    echoerr "Generating ${DISTRO_TMP_PATH}/config.stdin ..."
+    cat << EOF > "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_DB_DIALECT_ID}
+EOF
+
+    if [ "${DISTRO_DB_DIALECT}" = "bolt" ]; then
+      cat << EOF >> "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_DB_PATH}/database.boltdb
+EOF
+    else
+      cat << EOF >> "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_DB_HOST}
+${DISTRO_DB_USER}
+${DISTRO_DB_PASS}
+${DISTRO_DB}
+EOF
+    fi
+
+      cat << EOF >> "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_TMP_PATH}
+${DISTRO_WEB_ROOT}
+no
+no
+no
+${DISTRO_LDAP_ACTIVATED}
+EOF
+
+    if [ "${DISTRO_LDAP_ACTIVATED}" = "yes" ]; then
+        cat << EOF >> "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_LDAP_HOST}:${DISTRO_LDAP_PORT}
+${DISTRO_LDAP_NEEDTLS}
+${DISTRO_LDAP_DN_BIND}
+${DISTRO_LDAP_PASSWORD}
+${DISTRO_LDAP_DN_SEARCH}
+${DISTRO_LDAP_SEARCH_FILTER}
+${DISTRO_LDAP_MAPPING_DN}
+${DISTRO_LDAP_MAPPING_USERNAME}
+${DISTRO_LDAP_MAPPING_FULLNAME}
+${DISTRO_LDAP_MAPPING_EMAIL}
+EOF
+    fi;
+
+    cat << EOF >> "${DISTRO_TMP_PATH}/config.stdin"
+${DISTRO_CONFIG_PATH}
+${DISTRO_ADMIN}
+${DISTRO_ADMIN_EMAIL}
+${DISTRO_ADMIN_NAME}
+${DISTRO_ADMIN_PASSWORD}
+EOF
+
+    cat "${DISTRO_TMP_PATH}/config.stdin"
+    $1 setup - < "${DISTRO_TMP_PATH}/config.stdin"
+    echoerr "Run Distro with distro server --config ${DISTRO_CONFIG_PATH}/config.json"
+fi
+
+# run our command
+exec "$@"
