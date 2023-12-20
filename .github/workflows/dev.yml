@@ -121,7 +121,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: ./deployment/docker/prod/buildx.Dockerfile
           push: true
-          tags: distroui/distro:develop
+          tags: khulnasoft/distro:develop
 
       - name: Build and push runner
         uses: docker/build-push-action@v3
@@ -130,5 +130,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: ./deployment/docker/prod/runner.buildx.Dockerfile
           push: true
-          tags: distroui/runner:develop
+          tags: khulnasoft/runner:develop
 

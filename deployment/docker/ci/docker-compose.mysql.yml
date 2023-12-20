@@ -12,7 +12,7 @@ services:
       - "3306:3306"
 
   distro_ci:
-    image: distroui/distro:ci-compose
+    image: khulnasoft/distro:ci-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/ci/Dockerfile

@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: hx4hjxqthfwbfsy5535u4agfdscm
 
   distro:
-    image: distroui/distro:prod-compose
+    image: khulnasoft/distro:prod-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/prod/Dockerfile

@@ -65,7 +65,7 @@ func createDemoProject(projectID int, store db.Store) (err error) {
 	demoRepo, err = store.CreateRepository(db.Repository{
 		Name:      "Demo",
 		ProjectID: projectID,
-		GitURL:    "https://github.com/distroui/demo-project.git",
+		GitURL:    "https://github.com/khulnasoft/demo-project.git",
 		GitBranch: "main",
 		SSHKeyID:  noneKey.ID,
 	})

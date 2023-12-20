@@ -703,7 +703,7 @@ export default {
     },
 
     isAuthenticated() {
-      return document.cookie.includes('distro=');
+      return document.cookie.includes('semaphore=');
     },
 
     templatesUrl() {

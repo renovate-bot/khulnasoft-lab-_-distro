@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-LABEL maintainer="Tom Whiston <tom.whiston@gmail.com>"
+LABEL maintainer="KhulnaSoft DevOps <security@khulnasoft.com>"
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY cert/ /etc/nginx/cert

@@ -62,7 +62,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: ./deployment/docker/prod/buildx.Dockerfile
           push: true
-          tags: distroui/distro:beta,distroui/distro:${{ github.ref_name }}
+          tags: khulnasoft/distro:beta,khulnasoft/distro:${{ github.ref_name }}
 
 
 
@@ -73,4 +73,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           file: ./deployment/docker/prod/runner.buildx.Dockerfile
           push: true
-          tags: distroui/runner:beta,distroui/runner:${{ github.ref_name }}
+          tags: khulnasoft/runner:beta,khulnasoft/runner:${{ github.ref_name }}

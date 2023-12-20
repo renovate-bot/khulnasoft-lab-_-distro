@@ -23,7 +23,7 @@
           </p>
           <p>
             {{ $t('forMoreInformationAboutBuildingSeeThe') }}
-            <a href="https://docs.ansible-distro.com/user-guide/task-templates#build"
+            <a href="https://docs.ansible-semaphore.com/user-guide/task-templates#build"
                target="_blank"
             >{{ $t('taskTemplateReference') }}</a>.
           </p>
@@ -34,7 +34,7 @@
           </p>
           <p>
             {{ $t('forMoreInformationAboutDeployingSeeThe') }}
-            <a href="https://docs.ansible-distro.com/user-guide/task-templates#build"
+            <a href="https://docs.ansible-semaphore.com/user-guide/task-templates#build"
                target="_blank"
             >{{ $t('taskTemplateReference2') }}</a>.
           </p>
