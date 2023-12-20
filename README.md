@@ -16,7 +16,7 @@ If your project has grown and deploying from the terminal is no longer for you t
 ## Installation
 
 ### Full documentation
-https://docs.ansible-distro.com/administration-guide/installation
+https://docs.ansible-semaphore.com/administration-guide/installation
 
 ### Snap
 
@@ -55,7 +55,7 @@ You can test latest version of Distro on https://demo.ansible-distro.com.
 
 ## Docs
 
-Admin and user docs: https://docs.ansible-distro.com
+Admin and user docs: https://docs.ansible-semaphore.com
 
 API description: https://ansible-distro.com/api-docs/
 
