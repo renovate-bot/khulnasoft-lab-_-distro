@@ -703,7 +703,7 @@ export default {
     },
 
     isAuthenticated() {
-      return document.cookie.includes('semaphore=');
+      return document.cookie.includes('khulnasoft=');
     },
 
     templatesUrl() {

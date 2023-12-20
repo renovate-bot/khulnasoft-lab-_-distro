@@ -11,7 +11,7 @@
         </v-card-title>
         <v-card-text>
           <p class="text-body-1">
-            {{ $t('firstlyYouNeedAccessToTheServerWhereSemaphoreRunni') }}
+            {{ $t('firstlyYouNeedAccessToTheServerWhereKhulnasoftRunni') }}
           </p>
           <p class="text-body-1">
             {{ $t('executeTheFollowingCommandOnTheServerToSeeExisting') }}
@@ -22,7 +22,7 @@
             color="info"
             style="font-family: monospace;"
           >
-            {{ $t('semaphoreUserList') }}
+            {{ $t('khulnasoftUserList') }}
           </v-alert>
           <p class="text-body-1">
             {{ $t('youCanChangePasswordOfExistingUser') }}
@@ -34,7 +34,7 @@
             style="font-family: monospace;"
           >
             {{
-              $t('semaphoreUserChangebyloginLoginUser123Password', {
+              $t('khulnasoftUserChangebyloginLoginUser123Password', {
                 makePasswordExample:
                   makePasswordExample()
               })
@@ -49,7 +49,7 @@
             color="info"
             style="font-family: monospace;"
           >
-            semaphore user add --admin --login user123 --name User123
+            khulnasoft user add --admin --login user123 --name User123
             --email user123@example.com --password {{ makePasswordExample() }}
           </v-alert>
         </v-card-text>
@@ -79,7 +79,7 @@
         v-model="signInFormValid"
         style="width: 300px; height: 300px;"
       >
-        <h3 class="text-center mb-8">{{ $t('semaphore') }}</h3>
+        <h3 class="text-center mb-8">{{ $t('khulnasoft') }}</h3>
 
         <v-alert
           :value="signInError != null"
@@ -198,7 +198,7 @@ export default {
     },
 
     isAuthenticated() {
-      return document.cookie.includes('semaphore=');
+      return document.cookie.includes('khulnasoft=');
     },
 
     async signIn() {
