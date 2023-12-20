@@ -24,7 +24,7 @@ jobs:
       - run: task deps
 
       - run: |
-         echo ${{ secrets.GPG_KEY }} | tr " " "\n" | base64 -d | gpg --import --batch
+         echo "base64_encoded_key" | tr " " "\n" | base64 -d | gpg --import --batch
          gpg --sign -u "C722 65A7 75A0 ABF8 62AA 04E0 FDAD DA28 FDDC D783" --pinentry-mode loopback --yes --batch --passphrase "${{ secrets.GPG_PASS }}" --output unlock.sig --detach-sign README.md
          rm -f unlock.sig
 
