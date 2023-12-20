@@ -31,7 +31,7 @@ services:
     depends_on:
       - mysql
   distro_proxy:
-    image: ansibledistro/proxy:latest
+    image: khulnasoft/proxy:latest
     build:
       context: ./proxy
     ports:
