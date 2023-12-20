@@ -51,9 +51,9 @@ nfpms:
   -
     file_name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
-    vendor: Castaway Consulting LLC
+    vendor: KhulnaSoft LTD.
     homepage: https://github.com/khulnasoft-lab/distro
-    maintainer: Castaway Consulting LLC <support@castawaylabs.com>
+    maintainer: KhulnaSoft LTD. <security@khulnasoft.com>
     description: Open Source alternative to Ansible Tower
     license: MIT
 
