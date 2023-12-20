@@ -1,7 +1,7 @@
 # Ansible Distro
 
 [![distro](https://snapcraft.io/distro/badge.svg)](https://snapcraft.io/distro)
-[![Join the chat at https://gitter.im/AnsibleDistro/distro](https://img.shields.io/gitter/room/AnsibleDistro/distro?logo=gitter)](https://gitter.im/AnsibleDistro/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/khulnasoft/distro](https://img.shields.io/gitter/room/khulnasoft/distro?logo=gitter)](https://gitter.im/khulnasoft/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Twitter](https://img.shields.io/twitter/follow/khulnasoft?style=social&logo=twitter)](https://twitter.com/khulnasoft)
 

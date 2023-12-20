@@ -75,8 +75,8 @@ definitions:
         example: test-user
       email:
         type: string
-        x-example: test@ansibledistro.test
-        example: test@ansibledistro.test
+        x-example: test@khulnasoft.test
+        example: test@khulnasoft.test
       alert:
         type: boolean
       admin:
@@ -95,8 +95,8 @@ definitions:
         example: test-user2
       email:
         type: string
-        x-example: test2@ansibledistro.test
-        example: test2@ansibledistro.test
+        x-example: test2@khulnasoft.test
+        example: test2@khulnasoft.test
       alert:
         type: boolean
       admin:

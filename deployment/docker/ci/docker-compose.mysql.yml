@@ -35,7 +35,7 @@ services:
       - mysql
 
   dredd:
-    image: ansibledistro/dredd:ci
+    image: khulnasoft/dredd:ci
     command: ["--config", ".dredd/dredd.yml"]
     environment:
       DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
