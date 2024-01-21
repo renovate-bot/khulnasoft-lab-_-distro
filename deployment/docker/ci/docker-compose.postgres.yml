@@ -11,7 +11,7 @@ services:
       - "5432:5432"
 
   distro_ci:
-    image: distroui/distro:ci-compose
+    image: khulnasoft/distro:ci-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/ci/Dockerfile

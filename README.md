@@ -3,7 +3,7 @@
 [![distro](https://snapcraft.io/distro/badge.svg)](https://snapcraft.io/distro)
 [![Join the chat at https://gitter.im/AnsibleDistro/distro](https://img.shields.io/gitter/room/AnsibleDistro/distro?logo=gitter)](https://gitter.im/AnsibleDistro/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Twitter](https://img.shields.io/twitter/follow/distroui?style=social&logo=twitter)](https://twitter.com/distroui)
+[![Twitter](https://img.shields.io/twitter/follow/khulnasoft?style=social&logo=twitter)](https://twitter.com/khulnasoft)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/fiftin)
 
@@ -28,7 +28,7 @@ sudo distro user add --admin --name "Your Name" --login your_login --email your-
 
 ### Docker 
 
-https://hub.docker.com/r/distroui/distro
+https://hub.docker.com/r/khulnasoft/distro
 
 `docker-compose.yml` for minimal configuration:
 
@@ -37,7 +37,7 @@ services:
   distro:
     ports:
       - 3000:3000
-    image: distroui/distro:latest
+    image: khulnasoft/distro:latest
     environment:
       DISTRO_DB_DIALECT: bolt
       DISTRO_ADMIN_PASSWORD: changeme

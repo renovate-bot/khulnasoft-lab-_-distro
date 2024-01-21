@@ -5,7 +5,7 @@ volumes:
 
 services:
   distro_ci:
-    image: distroui/distro:ci-compose
+    image: khulnasoft/distro:ci-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/ci/Dockerfile
@@ -23,7 +23,7 @@ services:
       - data:/var/lib/distro
 
   dredd:
-    image: distroui/dredd:ci
+    image: khulnasoft/dredd:ci
     command: [ "--config", ".dredd/dredd.yml" ]
     environment:
       DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="
