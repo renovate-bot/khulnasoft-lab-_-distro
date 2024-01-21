@@ -1,7 +1,7 @@
 name: Beta
 on:
+  workflwo_dispatch:
   push:
-    workflwo_dispatch:
     tags:
       - v*-beta
 
