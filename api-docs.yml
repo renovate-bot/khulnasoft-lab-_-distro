@@ -75,8 +75,8 @@ definitions:
         example: test-user
       email:
         type: string
-        x-example: test@khulnasoft.test
-        example: test@khulnasoft.test
+        x-example: test@khulnasoft.com
+        example: test@khulnasoft.com
       alert:
         type: boolean
       admin:
@@ -95,8 +95,8 @@ definitions:
         example: test-user2
       email:
         type: string
-        x-example: test2@khulnasoft.test
-        example: test2@khulnasoft.test
+        x-example: test2@khulnasoft.com
+        example: test2@khulnasoft.com
       alert:
         type: boolean
       admin:
