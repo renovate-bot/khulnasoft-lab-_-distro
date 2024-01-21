@@ -1,12 +1,13 @@
 package projects
 
 import (
-	log "github.com/Sirupsen/logrus"
-	"github.com/khulnasoft-lab/distro/api/helpers"
-	"github.com/khulnasoft-lab/distro/db"
-	"github.com/gorilla/context"
 	"net/http"
 	"strconv"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/gorilla/context"
+	"github.com/khulnasoft-lab/distro/api/helpers"
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 // TemplatesMiddleware ensures a template exists and loads it to the context

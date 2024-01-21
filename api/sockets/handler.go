@@ -2,14 +2,15 @@ package sockets
 
 import (
 	"fmt"
-	"github.com/khulnasoft-lab/distro/db"
 	"net/http"
 	"time"
 
+	"github.com/khulnasoft-lab/distro/db"
+
 	log "github.com/Sirupsen/logrus"
-	"github.com/khulnasoft-lab/distro/util"
 	"github.com/gorilla/context"
 	"github.com/gorilla/websocket"
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 var upgrader = websocket.Upgrader{

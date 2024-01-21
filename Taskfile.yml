@@ -6,7 +6,7 @@
 version: '2'
 
 vars:
-  docker_namespace: khulnasoft
+  docker_namespace: distroui
   docker_image: distro
 
 

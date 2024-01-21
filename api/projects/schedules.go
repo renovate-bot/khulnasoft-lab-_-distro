@@ -1,13 +1,14 @@
 package projects
 
 import (
+	"net/http"
+	"strconv"
+
 	log "github.com/Sirupsen/logrus"
+	"github.com/gorilla/context"
 	"github.com/khulnasoft-lab/distro/api/helpers"
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/khulnasoft-lab/distro/services/schedules"
-	"github.com/gorilla/context"
-	"net/http"
-	"strconv"
 )
 
 // SchedulesMiddleware ensures a template exists and loads it to the context

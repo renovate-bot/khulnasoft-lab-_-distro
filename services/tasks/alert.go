@@ -2,12 +2,13 @@ package tasks
 
 import (
 	"bytes"
-	"github.com/khulnasoft-lab/distro/lib"
-	"github.com/khulnasoft-lab/distro/util"
 	"html/template"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/khulnasoft-lab/distro/lib"
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 const emailTemplate = "Subject: Task '{{ .Name }}' failed\r\n" +

@@ -1,9 +1,10 @@
 package bolt
 
 import (
-	"github.com/khulnasoft-lab/distro/db"
 	"testing"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func TestBoltDb_UpdateProjectUser(t *testing.T) {

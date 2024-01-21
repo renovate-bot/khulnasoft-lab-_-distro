@@ -123,7 +123,7 @@ func FillTemplate(d Store, template *Template) (err error) {
 	if err != nil {
 		return
 	}
-	
+
 	var tasks []TaskWithTpl
 	tasks, err = d.GetTemplateTasks(template.ProjectID, template.ID, RetrieveQueryParams{Count: 1})
 	if err != nil {

@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/khulnasoft-lab/distro/db"
-	trans "github.com/snikch/goodman/transaction"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/khulnasoft-lab/distro/db"
+	trans "github.com/snikch/goodman/transaction"
 )
 
 // STATE

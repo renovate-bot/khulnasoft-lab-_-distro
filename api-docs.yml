@@ -38,7 +38,7 @@ definitions:
       auth:
         type: string
         description: Username/Email address
-        x-example: user@distro.com
+        x-example: user@distro.khulnasoft.com
       password:
         type: string
         format: password
@@ -75,8 +75,8 @@ definitions:
         example: test-user
       email:
         type: string
-        x-example: test@khulnasoft.com
-        example: test@khulnasoft.com
+        x-example: test@ansibledistro.test
+        example: test@ansibledistro.test
       alert:
         type: boolean
       admin:
@@ -95,8 +95,8 @@ definitions:
         example: test-user2
       email:
         type: string
-        x-example: test2@khulnasoft.com
-        example: test2@khulnasoft.com
+        x-example: test2@ansibledistro.test
+        example: test2@ansibledistro.test
       alert:
         type: boolean
       admin:

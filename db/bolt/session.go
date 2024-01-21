@@ -1,9 +1,10 @@
 package bolt
 
 import (
-	"github.com/khulnasoft-lab/distro/db"
 	"reflect"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 type globalToken struct {

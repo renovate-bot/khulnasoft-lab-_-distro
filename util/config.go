@@ -111,7 +111,7 @@ type ConfigType struct {
 	BoltDb   DbConfig `json:"bolt"`
 	Postgres DbConfig `json:"postgres"`
 
-	Dialect string `json:"dialect" rule:"^mysql|bolt|postgres$" env:"DISTRO_DB_DIALECT"`
+	Dialect string `json:"dialect" default:"bolt" rule:"^mysql|bolt|postgres$" env:"DISTRO_DB_DIALECT"`
 
 	// Format `:port_num` eg, :3000
 	// if : is missing it will be corrected
@@ -168,6 +168,8 @@ type ConfigType struct {
 
 	// oidc settings
 	OidcProviders map[string]OidcProvider `json:"oidc_providers"`
+
+	MaxTaskDurationSec int `json:"max_task_duration_sec" env:"MAX_TASK_DURATION_SEC"`
 
 	// task concurrency
 	MaxParallelTasks int `json:"max_parallel_tasks" default:"10" rule:"^[0-9]{1,10}$" env:"DISTRO_MAX_PARALLEL_TASKS"`
@@ -510,7 +512,7 @@ func mapToQueryString(m map[string]string) (str string) {
 
 // FindDistro looks in the PATH for the distro variable
 // if not found it will attempt to find the absolute path of the first
-// os argument, the distro command, and return it
+// os argument, the distro.khulnasoft.command, and return it
 func FindDistro() string {
 	cmdPath, _ := exec.LookPath("distro") //nolint: gas
 

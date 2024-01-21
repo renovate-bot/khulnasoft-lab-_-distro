@@ -2,9 +2,10 @@ package bolt
 
 import (
 	"encoding/json"
+	"time"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"go.etcd.io/bbolt"
-	"time"
 )
 
 //func (d *BoltDb) getEventObjectName(evt db.Event) (string, error) {

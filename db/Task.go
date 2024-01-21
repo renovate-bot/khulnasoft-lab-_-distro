@@ -1,8 +1,9 @@
 package db
 
 import (
-	"github.com/khulnasoft-lab/distro/lib"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/lib"
 )
 
 // Task is a model of a task which will be executed by the runner

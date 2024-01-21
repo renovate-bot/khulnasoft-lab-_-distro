@@ -1,8 +1,9 @@
 package bolt
 
 import (
-	"github.com/khulnasoft-lab/distro/db"
 	"testing"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func TestTask_GetVersion(t *testing.T) {

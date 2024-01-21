@@ -1,5 +1,5 @@
 # ansible-distro production image
-FROM golang:1.19-alpine3.18 as builder
+FROM golang:1.20-alpine3.18 as builder
 
 COPY ./ /go/src/github.com/khulnasoft-lab/distro
 WORKDIR /go/src/github.com/khulnasoft-lab/distro
@@ -7,8 +7,8 @@ WORKDIR /go/src/github.com/khulnasoft-lab/distro
 RUN apk add --no-cache -U libc-dev curl nodejs npm git gcc g++ && \
   ./deployment/docker/prod/bin/install
 
-FROM alpine:3.19 as runner
-LABEL maintainer="KhulnaSoft DevOps <security@khulnasoft.com>"
+FROM alpine:3.18 as runner
+LABEL maintainer="Tom Whiston <tom.whiston@gmail.com>"
 
 RUN apk add --no-cache sshpass git curl ansible mysql-client openssh-client-default tini py3-aiohttp && \
     adduser -D -u 1001 -G root distro && \

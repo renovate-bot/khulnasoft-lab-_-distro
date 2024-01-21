@@ -1,11 +1,12 @@
 package projects
 
 import (
+	"net/http"
+
 	log "github.com/Sirupsen/logrus"
 	"github.com/khulnasoft-lab/distro/api/helpers"
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/khulnasoft-lab/distro/util"
-	"net/http"
 
 	"github.com/gorilla/context"
 )
@@ -65,7 +66,7 @@ func createDemoProject(projectID int, store db.Store) (err error) {
 	demoRepo, err = store.CreateRepository(db.Repository{
 		Name:      "Demo",
 		ProjectID: projectID,
-		GitURL:    "https://github.com/khulnasoft/demo-project.git",
+		GitURL:    "https://github.com/distroui/demo-project.git",
 		GitBranch: "main",
 		SSHKeyID:  noneKey.ID,
 	})

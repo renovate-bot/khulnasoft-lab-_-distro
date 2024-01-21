@@ -1,9 +1,9 @@
 # Ansible Distro
 
 [![distro](https://snapcraft.io/distro/badge.svg)](https://snapcraft.io/distro)
-[![Join the chat at https://gitter.im/khulnasoft/distro](https://img.shields.io/gitter/room/khulnasoft/distro?logo=gitter)](https://gitter.im/khulnasoft/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/AnsibleDistro/distro](https://img.shields.io/gitter/room/AnsibleDistro/distro?logo=gitter)](https://gitter.im/AnsibleDistro/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Twitter](https://img.shields.io/twitter/follow/khulnasoft?style=social&logo=twitter)](https://twitter.com/khulnasoft)
+[![Twitter](https://img.shields.io/twitter/follow/distroui?style=social&logo=twitter)](https://twitter.com/distroui)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/fiftin)
 
@@ -16,7 +16,7 @@ If your project has grown and deploying from the terminal is no longer for you t
 ## Installation
 
 ### Full documentation
-https://docs.ansible-semaphore.com/administration-guide/installation
+https://docs.ansible-distro.khulnasoft.com/administration-guide/installation
 
 ### Snap
 
@@ -28,7 +28,7 @@ sudo distro user add --admin --name "Your Name" --login your_login --email your-
 
 ### Docker 
 
-https://hub.docker.com/r/khulnasoft/distro
+https://hub.docker.com/r/distroui/distro
 
 `docker-compose.yml` for minimal configuration:
 
@@ -37,7 +37,7 @@ services:
   distro:
     ports:
       - 3000:3000
-    image: khulnasoft/distro:latest
+    image: distroui/distro:latest
     environment:
       DISTRO_DB_DIALECT: bolt
       DISTRO_ADMIN_PASSWORD: changeme
@@ -51,17 +51,17 @@ services:
 
 ## Demo
 
-You can test latest version of Distro on https://demo.ansible-distro.com.
+You can test latest version of Distro on https://demo.ansible-distro.khulnasoft.com.
 
 ## Docs
 
-Admin and user docs: https://docs.ansible-semaphore.com
+Admin and user docs: https://docs.ansible-distro.khulnasoft.com
 
-API description: https://ansible-distro.com/api-docs/
+API description: https://ansible-distro.khulnasoft.com/api-docs/
 
 ## Contributing
 
-If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.ansible-distro.com/blog/) with link to your profile.
+If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.ansible-distro.khulnasoft.com/blog/) with link to your profile.
 
 PR's & UX reviews are welcome!
 

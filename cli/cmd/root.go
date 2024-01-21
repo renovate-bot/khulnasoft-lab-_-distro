@@ -2,7 +2,13 @@ package cmd
 
 import (
 	"fmt"
+	"net/http"
+	"os"
+	"strings"
+
 	log "github.com/Sirupsen/logrus"
+	"github.com/gorilla/context"
+	"github.com/gorilla/handlers"
 	"github.com/khulnasoft-lab/distro/api"
 	"github.com/khulnasoft-lab/distro/api/sockets"
 	"github.com/khulnasoft-lab/distro/db"
@@ -10,12 +16,7 @@ import (
 	"github.com/khulnasoft-lab/distro/services/schedules"
 	"github.com/khulnasoft-lab/distro/services/tasks"
 	"github.com/khulnasoft-lab/distro/util"
-	"github.com/gorilla/context"
-	"github.com/gorilla/handlers"
 	"github.com/spf13/cobra"
-	"net/http"
-	"os"
-	"strings"
 )
 
 var configPath string
@@ -25,7 +26,7 @@ var rootCmd = &cobra.Command{
 	Short: "Ansible Distro is a beautiful web UI for Ansible",
 	Long: `Ansible Distro is a beautiful web UI for Ansible.
 Source code is available at https://github.com/khulnasoft-lab/distro.
-Complete documentation is available at https://ansible-distro.com.`,
+Complete documentation is available at https://ansible-distro.khulnasoft.com.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = cmd.Help()
 		os.Exit(0)

@@ -2,9 +2,10 @@ package bolt
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"golang.org/x/crypto/bcrypt"
-	"time"
 )
 
 func (d *BoltDb) CreateUserWithoutPassword(user db.User) (newUser db.User, err error) {

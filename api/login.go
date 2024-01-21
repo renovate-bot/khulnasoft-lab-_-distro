@@ -15,11 +15,11 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/oauth2"
 
-	"github.com/khulnasoft-lab/distro/api/helpers"
-	"github.com/khulnasoft-lab/distro/db"
 	"github.com/coreos/go-oidc/v3/oidc"
 	"github.com/go-ldap/ldap/v3"
 	"github.com/gorilla/mux"
+	"github.com/khulnasoft-lab/distro/api/helpers"
+	"github.com/khulnasoft-lab/distro/db"
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/khulnasoft-lab/distro/util"

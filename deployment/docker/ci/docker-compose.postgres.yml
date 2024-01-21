@@ -11,7 +11,7 @@ services:
       - "5432:5432"
 
   distro_ci:
-    image: khulnasoft/distro:ci-compose
+    image: distroui/distro:ci-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/ci/Dockerfile
@@ -34,7 +34,7 @@ services:
       - postgres
 
   dredd:
-    image: khulnasoft/dredd:ci
+    image: ansibledistro/dredd:ci
     command: ["--config", ".dredd/dredd.yml"]
     environment:
       DISTRO_ACCESS_KEY_ENCRYPTION: "IlRqgrrO5Gp27MlWakDX1xVrPv4jhoUx+ARY+qGyDxQ="

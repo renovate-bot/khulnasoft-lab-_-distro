@@ -1,9 +1,10 @@
 package bolt
 
 import (
+	"time"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"go.etcd.io/bbolt"
-	"time"
 )
 
 func (d *BoltDb) CreateTask(task db.Task) (newTask db.Task, err error) {

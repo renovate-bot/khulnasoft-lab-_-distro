@@ -2,6 +2,7 @@ package sql
 
 import (
 	"database/sql"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/masterminds/squirrel"
 )

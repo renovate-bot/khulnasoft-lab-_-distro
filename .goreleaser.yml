@@ -40,7 +40,8 @@ archives:
 signs:
   -
     artifacts: checksum
-    
+    args: ["-u", "58A7 CC3D 8A9C A2E5 BB5C 141D 4064 23EA F814 63CA", "--pinentry-mode", "loopback", "--yes", "--batch", "--output", "${signature}", "--detach-sign", "${artifact}"]
+
 # Start the snapshot name with a numerical value
 # so it does not need to be force installed
 snapshot:
@@ -50,9 +51,9 @@ nfpms:
   -
     file_name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
-    vendor: KhulnaSoft LTD.
+    vendor: Castaway Consulting LLC
     homepage: https://github.com/khulnasoft-lab/distro
-    maintainer: KhulnaSoft LTD. <security@khulnasoft.com>
+    maintainer: Castaway Consulting LLC <support@castawaylabs.com>
     description: Open Source alternative to Ansible Tower
     license: MIT
 

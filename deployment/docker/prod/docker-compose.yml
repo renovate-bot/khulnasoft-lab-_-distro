@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: hx4hjxqthfwbfsy5535u4agfdscm
 
   distro:
-    image: khulnasoft/distro:prod-compose
+    image: distroui/distro:prod-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/prod/Dockerfile
@@ -31,7 +31,7 @@ services:
     depends_on:
       - mysql
   distro_proxy:
-    image: khulnasoft/proxy:latest
+    image: ansibledistro/proxy:latest
     build:
       context: ./proxy
     ports:

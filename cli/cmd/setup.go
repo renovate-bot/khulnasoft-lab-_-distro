@@ -3,13 +3,14 @@ package cmd
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"strings"
+
 	"github.com/khulnasoft-lab/distro/cli/setup"
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/khulnasoft-lab/distro/db/factory"
 	"github.com/khulnasoft-lab/distro/util"
 	"github.com/spf13/cobra"
-	"os"
-	"strings"
 )
 
 func init() {

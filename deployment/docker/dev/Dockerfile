@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine3.18
+FROM golang:1.20-alpine3.18
 
 ENV DISTRO_VERSION="development" DISTRO_ARCH="linux_amd64" \
     DISTRO_CONFIG_PATH="${DISTRO_CONFIG_PATH:-/etc/distro}" \

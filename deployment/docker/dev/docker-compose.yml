@@ -15,7 +15,7 @@ services:
       - "3306:3306"
 
   distro_dev:
-    image: khulnasoft/distro:dev-compose
+    image: distroui/distro:dev-compose
     build:
       context: ./../../../
       dockerfile: ./deployment/docker/dev/Dockerfile

@@ -1,10 +1,11 @@
 package projects
 
 import (
+	"net/http"
+
+	"github.com/gorilla/mux"
 	"github.com/khulnasoft-lab/distro/api/helpers"
 	"github.com/khulnasoft-lab/distro/db"
-	"github.com/gorilla/mux"
-	"net/http"
 
 	"github.com/gorilla/context"
 )

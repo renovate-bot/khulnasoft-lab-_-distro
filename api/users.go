@@ -1,13 +1,14 @@
 package api
 
 import (
+	"net/http"
+
 	log "github.com/Sirupsen/logrus"
 	"github.com/khulnasoft-lab/distro/api/helpers"
 	"github.com/khulnasoft-lab/distro/db"
-	"net/http"
 
-	"github.com/khulnasoft-lab/distro/util"
 	"github.com/gorilla/context"
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 type minimalUser struct {

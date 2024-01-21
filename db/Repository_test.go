@@ -1,11 +1,12 @@
 package db
 
 import (
-	"github.com/khulnasoft-lab/distro/util"
 	"math/rand"
 	"os"
 	"path"
 	"testing"
+
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 func TestRepository_GetSchema(t *testing.T) {

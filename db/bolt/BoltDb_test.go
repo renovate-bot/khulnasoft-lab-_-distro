@@ -2,9 +2,10 @@ package bolt
 
 import (
 	"fmt"
-	"github.com/khulnasoft-lab/distro/db"
 	"reflect"
 	"testing"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 type test1 struct {

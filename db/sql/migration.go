@@ -2,12 +2,13 @@ package sql
 
 import (
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/khulnasoft-lab/distro/db"
-	"github.com/go-gorp/gorp/v3"
 	"regexp"
 	"strings"
 	"time"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/go-gorp/gorp/v3"
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 var (
