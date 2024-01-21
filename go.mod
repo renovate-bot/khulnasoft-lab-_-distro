@@ -1,6 +1,6 @@
 module github.com/khulnasoft-lab/distro
 
-go 1.20
+go 1.19
 
 require (
 	github.com/Sirupsen/logrus v1.0.4
