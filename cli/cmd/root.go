@@ -26,7 +26,7 @@ var rootCmd = &cobra.Command{
 	Short: "Ansible Distro is a beautiful web UI for Ansible",
 	Long: `Ansible Distro is a beautiful web UI for Ansible.
 Source code is available at https://github.com/khulnasoft-lab/distro.
-Complete documentation is available at https://ansible-distro.khulnasoft.com.`,
+Complete documentation is available at https://distro.khulnasoft.com.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		_ = cmd.Help()
 		os.Exit(0)
