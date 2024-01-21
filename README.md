@@ -16,7 +16,7 @@ If your project has grown and deploying from the terminal is no longer for you t
 ## Installation
 
 ### Full documentation
-https://docs.ansible-distro.khulnasoft.com/administration-guide/installation
+https://docs.distro.khulnasoft.com/administration-guide/installation
 
 ### Snap
 
@@ -51,17 +51,17 @@ services:
 
 ## Demo
 
-You can test latest version of Distro on https://demo.ansible-distro.khulnasoft.com.
+You can test latest version of Distro on https://demo.distro.khulnasoft.com.
 
 ## Docs
 
-Admin and user docs: https://docs.ansible-distro.khulnasoft.com
+Admin and user docs: https://docs.distro.khulnasoft.com
 
-API description: https://ansible-distro.khulnasoft.com/api-docs/
+API description: https://distro.khulnasoft.com/api-docs/
 
 ## Contributing
 
-If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.ansible-distro.khulnasoft.com/blog/) with link to your profile.
+If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.distro.khulnasoft.com/blog/) with link to your profile.
 
 PR's & UX reviews are welcome!
 
