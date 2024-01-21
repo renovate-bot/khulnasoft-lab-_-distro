@@ -65,7 +65,7 @@ func TestMarshalObject_UserWithPwd(t *testing.T) {
 	user := db.UserWithPwd{
 		Pwd: "123456",
 		User: db.User{
-			Username: "fiftin",
+			Username: "khulnasoft-lab",
 			Password: "345345234523452345234",
 		},
 	}
@@ -78,7 +78,7 @@ func TestMarshalObject_UserWithPwd(t *testing.T) {
 
 	str := string(bytes)
 
-	if str != `{"id":0,"created":"0001-01-01T00:00:00Z","username":"fiftin","name":"","email":"","password":"345345234523452345234","admin":false,"external":false,"alert":false}` {
+	if str != `{"id":0,"created":"0001-01-01T00:00:00Z","username":"khulnasoft-lab","name":"","email":"","password":"345345234523452345234","admin":false,"external":false,"alert":false}` {
 		t.Fatal(fmt.Errorf("incorrect marshalling result"))
 	}
 

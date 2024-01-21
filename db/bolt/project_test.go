@@ -15,7 +15,7 @@ func TestGetProjects(t *testing.T) {
 		User: db.User{
 			Email:    "denguk@example.com",
 			Name:     "Denis Gukov",
-			Username: "fiftin",
+			Username: "khulnasoft-lab",
 		},
 	})
 
