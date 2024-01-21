@@ -1,6 +1,6 @@
 name: Beta
 on:
-  workflwo_dispatch:
+  workflow_run:
   push:
     tags:
       - v*-beta
