@@ -10,7 +10,7 @@ ARG TARGETARCH
 RUN apk add --no-cache -U libc-dev curl nodejs npm git gcc
 RUN ./deployment/docker/prod/bin/install ${TARGETOS} ${TARGETARCH}
 
-FROM alpine:3.18 as runner
+FROM alpine:3.19 as runner
 LABEL maintainer="KhulnaSoft DevOps <security@khulnasoft.com>"
 
 RUN apk add --no-cache sshpass git curl ansible mysql-client openssh-client-default tini py3-aiohttp && \
