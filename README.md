@@ -1,7 +1,7 @@
 # Ansible Distro
 
 [![distro](https://snapcraft.io/distro/badge.svg)](https://snapcraft.io/distro)
-[![Join the chat at https://gitter.im/khulnasoft/distro](https://img.shields.io/gitter/room/khulnasoft/distro?logo=gitter)](https://gitter.im/khulnasoft/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/AnsibleDistro/distro](https://img.shields.io/gitter/room/AnsibleDistro/distro?logo=gitter)](https://gitter.im/AnsibleDistro/distro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![Twitter](https://img.shields.io/twitter/follow/khulnasoft?style=social&logo=twitter)](https://twitter.com/khulnasoft)
 
@@ -16,7 +16,7 @@ If your project has grown and deploying from the terminal is no longer for you t
 ## Installation
 
 ### Full documentation
-https://docs.ansible-semaphore.com/administration-guide/installation
+https://docs.distro.khulnasoft.com/administration-guide/installation
 
 ### Snap
 
@@ -51,17 +51,17 @@ services:
 
 ## Demo
 
-You can test latest version of Distro on https://demo.ansible-distro.com.
+You can test latest version of Distro on https://demo.distro.khulnasoft.com.
 
 ## Docs
 
-Admin and user docs: https://docs.ansible-semaphore.com
+Admin and user docs: https://docs.distro.khulnasoft.com
 
-API description: https://ansible-distro.com/api-docs/
+API description: https://distro.khulnasoft.com/api-docs/
 
 ## Contributing
 
-If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.ansible-distro.com/blog/) with link to your profile.
+If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.distro.khulnasoft.com/blog/) with link to your profile.
 
 PR's & UX reviews are welcome!
 

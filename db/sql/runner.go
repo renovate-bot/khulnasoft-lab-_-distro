@@ -2,8 +2,9 @@ package sql
 
 import (
 	"encoding/base64"
-	"github.com/khulnasoft-lab/distro/db"
+
 	"github.com/gorilla/securecookie"
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func (d *SqlDb) GetRunner(projectID int, runnerID int) (runner db.Runner, err error) {

@@ -2,10 +2,11 @@ package sql
 
 import (
 	"database/sql"
+	"time"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/masterminds/squirrel"
 	"golang.org/x/crypto/bcrypt"
-	"time"
 )
 
 func (d *SqlDb) CreateUserWithoutPassword(user db.User) (newUser db.User, err error) {

@@ -1,8 +1,9 @@
 package bolt
 
 import (
-	"github.com/khulnasoft-lab/distro/db"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func (d *BoltDb) CreateProject(project db.Project) (db.Project, error) {

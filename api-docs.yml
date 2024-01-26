@@ -38,7 +38,7 @@ definitions:
       auth:
         type: string
         description: Username/Email address
-        x-example: user@distro.com
+        x-example: user@distro.khulnasoft.com
       password:
         type: string
         format: password

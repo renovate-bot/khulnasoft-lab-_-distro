@@ -2,8 +2,9 @@ package db
 
 import (
 	"encoding/base64"
-	"github.com/khulnasoft-lab/distro/util"
 	"testing"
+
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 func TestSetSecret(t *testing.T) {

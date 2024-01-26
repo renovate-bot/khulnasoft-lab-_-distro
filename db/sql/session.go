@@ -2,8 +2,9 @@ package sql
 
 import (
 	"database/sql"
-	"github.com/khulnasoft-lab/distro/db"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func (d *SqlDb) CreateSession(session db.Session) (db.Session, error) {

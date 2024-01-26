@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine3.18 as golang
+FROM golang:1.20-alpine3.18 as golang
 
 RUN apk add --no-cache curl git
 
@@ -9,7 +9,7 @@ RUN (cd /usr && curl -sL https://taskfile.dev/install.sh | sh)
 WORKDIR /distro
 RUN task deps:tools && task deps:be && task compile:be && task compile:api:hooks
 
-FROM apiaryio/dredd:13.1.2 as dredd
+FROM apiaryio/dredd:13.0.0 as dredd
 
 RUN apk add --no-cache bash go git
 

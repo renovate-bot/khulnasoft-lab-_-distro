@@ -1,17 +1,27 @@
 package runners
 
 import (
+	"net/http"
+
+	"github.com/gorilla/context"
 	"github.com/khulnasoft-lab/distro/api/helpers"
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/khulnasoft-lab/distro/lib"
 	"github.com/khulnasoft-lab/distro/services/runners"
 	"github.com/khulnasoft-lab/distro/util"
-	"github.com/gorilla/context"
-	"net/http"
 )
 
 func RunnerMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		token := r.Header.Get("X-API-Token")
+
+		if token == "" {
+			helpers.WriteJSON(w, http.StatusUnauthorized, map[string]string{
+				"error": "Invalid token",
+			})
+			return
+		}
 
 		runnerID, err := helpers.GetIntParam("runner_id", w, r)
 
@@ -29,6 +39,13 @@ func RunnerMiddleware(next http.Handler) http.Handler {
 		if err != nil {
 			helpers.WriteJSON(w, http.StatusNotFound, map[string]string{
 				"error": "Runner not found",
+			})
+			return
+		}
+
+		if runner.Token != token {
+			helpers.WriteJSON(w, http.StatusUnauthorized, map[string]string{
+				"error": "Invalid token",
 			})
 			return
 		}
@@ -102,6 +119,9 @@ func GetRunner(w http.ResponseWriter, r *http.Request) {
 }
 
 func UpdateRunner(w http.ResponseWriter, r *http.Request) {
+
+	runner := context.Get(r, "runner").(db.Runner)
+
 	var body runners.RunnerProgress
 
 	if !helpers.Bind(w, r, &body) {
@@ -123,6 +143,11 @@ func UpdateRunner(w http.ResponseWriter, r *http.Request) {
 
 		if tsk == nil {
 			// TODO: log
+			continue
+		}
+
+		if tsk.RunnerID != runner.ID {
+			// TODO: add error message
 			continue
 		}
 

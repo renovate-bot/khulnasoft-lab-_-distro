@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/spf13/cobra"
-	"os"
 )
 
 func init() {

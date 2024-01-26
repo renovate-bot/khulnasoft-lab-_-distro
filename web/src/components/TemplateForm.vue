@@ -23,7 +23,7 @@
           </p>
           <p>
             {{ $t('forMoreInformationAboutBuildingSeeThe') }}
-            <a href="https://docs.ansible-khulnasoft.com/user-guide/task-templates#build"
+            <a href="https://docs.distro.khulnasoft.com/user-guide/task-templates#build"
                target="_blank"
             >{{ $t('taskTemplateReference') }}</a>.
           </p>
@@ -34,7 +34,7 @@
           </p>
           <p>
             {{ $t('forMoreInformationAboutDeployingSeeThe') }}
-            <a href="https://docs.ansible-khulnasoft.com/user-guide/task-templates#build"
+            <a href="https://docs.distro.khulnasoft.com/user-guide/task-templates#build"
                target="_blank"
             >{{ $t('taskTemplateReference2') }}</a>.
           </p>
@@ -43,7 +43,7 @@
           <p>{{ $t('definesAutorunSchedule') }}</p>
           <p>
             {{ $t('forMoreInformationAboutCronSeeThe') }}
-            <a href="https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format"
+            <a href="https://pkg.go.dev/github.com/robfig/cron/v3#hdr-CRON_Expression_Format"
                target="_blank"
             >{{ $t('cronExpressionFormatReference') }}</a>.
           </p>
@@ -271,7 +271,7 @@
 
         <small class="mt-1 mb-4 d-block">
           {{ $t('readThe') }}
-          <a target="_blank" href="https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format">{{ $t('docs') }}</a>
+          <a target="_blank" href="https://pkg.go.dev/github.com/robfig/cron/v3#hdr-CRON_Expression_Format">{{ $t('docs') }}</a>
           {{ $t('toLearnMoreAboutCron') }}
         </small>
 

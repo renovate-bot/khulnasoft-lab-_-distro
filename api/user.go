@@ -3,14 +3,15 @@ package api
 import (
 	"crypto/rand"
 	"encoding/base64"
-	"github.com/khulnasoft-lab/distro/api/helpers"
-	"github.com/khulnasoft-lab/distro/db"
-	"github.com/khulnasoft-lab/distro/util"
-	"github.com/gorilla/context"
-	"github.com/gorilla/mux"
 	"io"
 	"net/http"
 	"strings"
+
+	"github.com/gorilla/context"
+	"github.com/gorilla/mux"
+	"github.com/khulnasoft-lab/distro/api/helpers"
+	"github.com/khulnasoft-lab/distro/db"
+	"github.com/khulnasoft-lab/distro/util"
 )
 
 func getUser(w http.ResponseWriter, r *http.Request) {

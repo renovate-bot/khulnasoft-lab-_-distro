@@ -3,18 +3,19 @@ package sql
 import (
 	"database/sql"
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/khulnasoft-lab/distro/db"
-	"github.com/khulnasoft-lab/distro/util"
-	"github.com/go-gorp/gorp/v3"
-	_ "github.com/go-sql-driver/mysql" // imports mysql driver
-	"github.com/gobuffalo/packr"
-	_ "github.com/lib/pq"
-	"github.com/masterminds/squirrel"
 	"reflect"
 	"regexp"
 	"strconv"
 	"strings"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/go-gorp/gorp/v3"
+	_ "github.com/go-sql-driver/mysql" // imports mysql driver
+	"github.com/gobuffalo/packr"
+	"github.com/khulnasoft-lab/distro/db"
+	"github.com/khulnasoft-lab/distro/util"
+	_ "github.com/lib/pq"
+	"github.com/masterminds/squirrel"
 )
 
 type SqlDb struct {

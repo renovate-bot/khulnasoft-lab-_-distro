@@ -1,9 +1,10 @@
 package sql
 
 import (
+	"time"
+
 	"github.com/khulnasoft-lab/distro/db"
 	"github.com/masterminds/squirrel"
-	"time"
 )
 
 func (d *SqlDb) CreateProject(project db.Project) (newProject db.Project, err error) {

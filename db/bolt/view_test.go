@@ -1,10 +1,11 @@
 package bolt
 
 import (
-	"github.com/khulnasoft-lab/distro/db"
 	"sort"
 	"testing"
 	"time"
+
+	"github.com/khulnasoft-lab/distro/db"
 )
 
 func TestGetViews(t *testing.T) {

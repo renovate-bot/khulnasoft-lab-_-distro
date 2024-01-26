@@ -3,9 +3,6 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"github.com/khulnasoft-lab/distro/util"
-	"github.com/google/go-github/github"
-	"github.com/spf13/cobra"
 	"io"
 	"net/http"
 	"os"
@@ -13,6 +10,10 @@ import (
 	"runtime"
 	"strings"
 	"time"
+
+	"github.com/google/go-github/github"
+	"github.com/khulnasoft-lab/distro/util"
+	"github.com/spf13/cobra"
 )
 
 // Adapted from github.com/apex/apex

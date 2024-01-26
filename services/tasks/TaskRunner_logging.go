@@ -3,11 +3,12 @@ package tasks
 import (
 	"bufio"
 	"encoding/json"
+	"os/exec"
+	"time"
+
 	log "github.com/Sirupsen/logrus"
 	"github.com/khulnasoft-lab/distro/api/sockets"
 	"github.com/khulnasoft-lab/distro/util"
-	"os/exec"
-	"time"
 )
 
 func (t *TaskRunner) Log2(msg string, now time.Time) {
