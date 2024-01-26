@@ -1,6 +1,6 @@
 {
  	"bolt": {
- 		"host": "/Users/fiftin/go/src/github.com/khulnasoft-lab/distro/database.boltdb"
+ 		"host": "/Users/khulnasoft-lab/go/src/github.com/khulnasoft-lab/distro/database.boltdb"
  	},
 
  	"dialect": "bolt",

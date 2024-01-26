@@ -35,7 +35,6 @@ jobs:
         with:
           name: distro
           path: bin/distro
-          retention-days: 1
 
 
   test-db-migration:

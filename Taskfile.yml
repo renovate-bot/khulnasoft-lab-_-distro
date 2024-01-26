@@ -148,7 +148,7 @@ tasks:
   lint:be:
     # --errors
     cmds:
-      - golangci-lint run --skip-files "\w*(-packr.go)" --disable goconst --timeout 240s ./...
+      - golangci-lint run --fix --skip-files "\w*(-packr.go)" --disable goconst --timeout 240s ./...
 
   test:
     cmds:

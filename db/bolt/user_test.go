@@ -15,7 +15,7 @@ func TestBoltDb_UpdateProjectUser(t *testing.T) {
 		User: db.User{
 			Email:    "denguk@example.com",
 			Name:     "Denis Gukov",
-			Username: "fiftin",
+			Username: "khulnasoft-lab",
 		},
 	})
 
@@ -58,7 +58,7 @@ func TestGetUsers(t *testing.T) {
 		User: db.User{
 			Email:    "denguk@example.com",
 			Name:     "Denis Gukov",
-			Username: "fiftin",
+			Username: "khulnasoft-lab",
 		},
 	})
 
@@ -86,7 +86,7 @@ func TestGetUser(t *testing.T) {
 		User: db.User{
 			Email:    "denguk@example.com",
 			Name:     "Denis Gukov",
-			Username: "fiftin",
+			Username: "khulnasoft-lab",
 		},
 	})
 
@@ -100,7 +100,7 @@ func TestGetUser(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 
-	if found.Username != "fiftin" {
+	if found.Username != "khulnasoft-lab" {
 		t.Fatal(err.Error())
 	}
 

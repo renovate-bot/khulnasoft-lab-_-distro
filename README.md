@@ -5,7 +5,7 @@
 
 [![Twitter](https://img.shields.io/twitter/follow/khulnasoft?style=social&logo=twitter)](https://twitter.com/khulnasoft)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/fiftin)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/khulnasoft-lab)
 
 Ansible Distro is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.
 
@@ -61,7 +61,7 @@ API description: https://distro.khulnasoft.com/api-docs/
 
 ## Contributing
 
-If you want to write an article about Ansible or Distro, contact [@fiftin](https://github.com/fiftin) and we will place your article in our [Blog](https://www.distro.khulnasoft.com/blog/) with link to your profile.
+If you want to write an article about Ansible or Distro, contact [@khulnasoft-lab](https://github.com/khulnasoft-lab) and we will place your article in our [Blog](https://www.distro.khulnasoft.com/blog/) with link to your profile.
 
 PR's & UX reviews are welcome!
 
@@ -74,13 +74,13 @@ All releases after 2.5.1 are signed with the gpg public key
 
 ## Support
 
-If you like Ansible Distro, you can support the project development on [Ko-fi](https://ko-fi.com/fiftin).
+If you like Ansible Distro, you can support the project development on [Ko-fi](https://ko-fi.com/khulnasoft-lab).
 
 ## License
 
 MIT License
 
-Copyright (c) 2016 Castaway Consulting LLC
+Copyright (c) 2016 Md Sulaiman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
