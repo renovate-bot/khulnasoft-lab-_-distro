@@ -9,7 +9,7 @@ RUN (cd /usr && curl -sL https://taskfile.dev/install.sh | sh)
 WORKDIR /distro
 RUN task deps:tools && task deps:be && task compile:be && task compile:api:hooks
 
-FROM apiaryio/dredd:13.0.0 as dredd
+FROM apiaryio/dredd:13.1.2 as dredd
 
 RUN apk add --no-cache bash go git
 
