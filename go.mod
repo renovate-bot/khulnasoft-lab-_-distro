@@ -1,6 +1,8 @@
 module github.com/khulnasoft-lab/distro
 
-go 1.20
+go 1.23.0
+
+toolchain go1.24.6
 
 require (
 	github.com/Sirupsen/logrus v1.0.4
@@ -23,7 +25,7 @@ require (
 	github.com/snikch/goodman v0.0.0-20171125024755-10e37e294daa
 	github.com/spf13/cobra v1.2.1
 	go.etcd.io/bbolt v1.3.2
-	golang.org/x/crypto v0.17.0
+	golang.org/x/crypto v0.35.0
 	golang.org/x/oauth2 v0.7.0
 )
 
@@ -54,9 +56,9 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.8.4 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
-	golang.org/x/net v0.10.0 // indirect
-	golang.org/x/sys v0.16.0 // indirect
-	golang.org/x/term v0.16.0 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/term v0.29.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/airbrake/gobrake.v2 v2.0.9 // indirect
