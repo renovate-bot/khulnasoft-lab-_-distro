@@ -1,6 +1,6 @@
 module github.com/khulnasoft-lab/distro
 
-go 1.20
+go 1.23.0
 
 require (
 	github.com/Sirupsen/logrus v1.0.4
@@ -24,7 +24,7 @@ require (
 	github.com/spf13/cobra v1.2.1
 	go.etcd.io/bbolt v1.3.2
 	golang.org/x/crypto v0.17.0
-	golang.org/x/oauth2 v0.7.0
+	golang.org/x/oauth2 v0.27.0
 )
 
 require (
